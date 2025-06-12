@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Quicksand:wght@400;600&display=swap');
+
+body {
+  margin: 0;
+  padding: 0 20px;
+  font-family: 'Quicksand', sans-serif;
+  background: url('background.gif') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+#game {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 24px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+#chapter-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #c9184a;
+  margin-bottom: 20px;
+}
+
+#chapter-image {
+  max-width: 100%;
+  max-height: 220px;
+  border-radius: 15px;
+  object-fit: cover;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 15px rgba(201, 24, 74, 0.5);
+  transition: opacity 0.5s ease;
+}
+
+#text {
+  font-size: 1.1rem;
+  margin: 20px 0;
+  color: #333;
+  line-height: 1.6;
+}
+
+#progress-bar-container {
+  width: 100%;
+  height: 8px;
+  background: #f0f0f0;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+
+#progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(135deg, #ff4e75, #ff9a8b);
+  border-radius: 8px;
+  transition: width 0.5s ease;
+}
+
+#choices {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#choices button {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #ff4e75, #ff9a8b);
+  color: white;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.3s ease,
+    filter 0.3s ease;
+  filter: drop-shadow(0 0 3px rgba(255,78,117,0.6));
+}
+
+#choices button:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(135deg, #ff2e5c, #ff7f7f);
+  filter: drop-shadow(0 0 6px rgba(255,46,92,0.8));
+}
+
+#choices button:active {
+  transform: translateY(0) scale(0.97);
+  filter: drop-shadow(0 0 2px rgba(255,46,92,0.9));
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 24px;
+  }
+
+  #game {
+    padding: 24px;
+  }
+
+  #chapter-title {
+    font-size: 1.6rem;
+  }
+
+  #text {
+    font-size: 1rem;
+  }
+
+  #choices button {
+    font-size: 0.95rem;
+    padding: 12px;
+  }
+}
